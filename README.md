@@ -13,7 +13,7 @@ The videos are >=480p, without audio, 30fps, avi files (matching light compressi
   * Part of face: 5 videos
 * CGI: 50 videos, Minimum length = ~4 sec
 
-In the `all_videos.csv` file, the first column is the video ID, while the second and the third are the start and end times in seconds, respectively. The forth column, if not empty, indicates which part of the screen the fake face is on. The last column describes the category.
+In the `all_videos.csv` file, the first column is the video ID, while the second and the third are the start and end times in seconds, respectively. The fourth column, if not empty, indicates which part of the screen the fake face is on. The last column describes the category.
 
 ## Instructions
 
@@ -28,11 +28,11 @@ The download and cut process may take many hours to complete. Some of the videos
 
 ## contact
 
-Please feel free to contact me if you have any questions or face any problems.
+Please feel free to contact me if you have any questions or face any issues.
 
 Ali Khodabakhsh, [ali.khodabakhsh@gmail.com](mailto:ali.khodabakhsh@gmail.com)
 
-The codes is available at [http://ali.khodabakhsh.org/ffw/](http://ali.khodabakhsh.org/ffw/) for download
+The code is also available at [http://ali.khodabakhsh.org/ffw/](http://ali.khodabakhsh.org/ffw/) for download
 
 ---
 ```
