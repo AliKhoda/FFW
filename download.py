@@ -21,11 +21,11 @@ def download(ID, start, end, targetdir):
             # Download the tempfile using Youtube-dl
             print('Downloading ' + ID + '...')
             print('youtube-dl --no-check-certificate --output ' + \
-                  os.path.join(tempfile.gettempdir(),'%\(id\)s.%\(ext\)s') + \
+                  os.path.join(tempfile.gettempdir(),r'%(id)s.%(ext)s') + \
                   ' --format ' + formt + ' ' + ID)
-            os.system('youtube-dl --no-check-certificate --output ' + \
-                  os.path.join(tempfile.gettempdir(),'%\(id\)s.%\(ext\)s') + \
-                  ' --format ' + formt + ' ' + ID)
+            os.system(('youtube-dl --no-check-certificate --output ' + \
+                  os.path.join(tempfile.gettempdir(),r'%(id)s.%(ext)s') + \
+                  ' --format ' + formt + ' ' + ID))
         
         # Cut the tempfile using FFmpeg
         print('Cutting ' + ID + ' from ' + start + ' to ' + end + '...')
@@ -34,7 +34,7 @@ def download(ID, start, end, targetdir):
 
 def main():
     # video list file
-    csvfile = (sys.argv[1])
+    csvfile = (sys.argv[1]).replace('\r','')
     print('Downloading ' + csvfile)
     
     # define targetdir
@@ -51,6 +51,7 @@ def main():
         # for each video
         for row in reader:
             row = list(map(str.strip,row))
+            row = [x.replace('\r','') for x in row]
             # Call download function
             download(row[0], row[1], row[2], targetdir)
             
