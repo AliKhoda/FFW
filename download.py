@@ -23,7 +23,7 @@ def download(ID, start, end, targetdir):
             print('youtube-dl --no-check-certificate --output ' + \
                   os.path.join(tempfile.gettempdir(),r'%(id)s.%(ext)s') + \
                   ' --format ' + formt + ' ' + ID)
-            if os.platform == "linux" or os.platform == "linux2":
+            if sys.platform == "linux" or sys.platform == "linux2":
             	os.system(('youtube-dl --no-check-certificate --output ' + \
                   os.path.join(tempfile.gettempdir(),'%\(id\)s.%\(ext\)s') + \
                   ' --format ' + formt + ' ' + ID))
